@@ -6,24 +6,30 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] float speed = 10.0f;
-    [SerializeField] float lookSpeed = 50f;
+    [SerializeField] float rotationSpeed = 100f;
     [SerializeField] float jumpPower = 50f;
+    [SerializeField] float gravity = 10f;
+    [SerializeField] float jumpTimeLeniency = 0.1f;
+    float timeToStopLeniency;
+    bool hasJumpedOnce = false;
 
-    BoxCollider boxCollider;
     Vector3 movement;
-    bool isGrounded;
     private CharacterController controller;
     private InputManager inputManager;
     void Awake()
     {
         controller = GetComponent<CharacterController>();
-        boxCollider = GetComponent<BoxCollider>();
+    }
+
+    void Start()
+    {
         inputManager = InputManager.instance;
     }
 
     void Update()
     {
         Move();
+        RotateHorizontally();
     }
 
     void Move()
@@ -32,22 +38,42 @@ public class PlayerController : MonoBehaviour
         //Debug.Log("Horizontal movement: " + horMovement);
         float vertMovement = inputManager.GetVerticalMoveAxis();
         bool jumpPressed = inputManager.JumpPressed();
-
         
         if (controller.isGrounded)
         {
-            movement = new Vector3(horMovement, -10f * Time.deltaTime, vertMovement);
+            timeToStopLeniency = Time.time + jumpTimeLeniency;
+            hasJumpedOnce = false;
+            movement = new Vector3(horMovement, 0, vertMovement);
             movement = transform.TransformDirection(movement);
             movement *= speed;
 
             if (jumpPressed)
             {
+                hasJumpedOnce = true;
                 movement.y = jumpPower;
             }
         }
         else
-            movement.y -= 10f * Time.deltaTime;
+        {
+            //временной промежуток, во время которого еще можно прыгнуть, не находясь на земле (при падении)
+            if (!hasJumpedOnce && jumpPressed && Time.time < timeToStopLeniency)
+            {
+                movement.y = jumpPower;
+                hasJumpedOnce = true;
+            }
+
+            movement = new Vector3(horMovement * speed, movement.y, vertMovement * speed);
+            movement = transform.TransformDirection(movement);
+        }
+        movement.y -= gravity * Time.deltaTime;
 
         controller.Move(movement * Time.deltaTime);
+    }
+
+    void RotateHorizontally()
+    {
+        float horizontalLookAxis = inputManager.GetHorizontalLookAxis();
+
+        transform.Rotate(0, horizontalLookAxis * rotationSpeed * Time.deltaTime, 0);
     }
 }

@@ -11,12 +11,13 @@ public class InputManager : MonoBehaviour
     {
         if (FindObjectsByType<InputManager>(FindObjectsSortMode.None).Length > 1)
         {
-            Destroy(this);
+            gameObject.SetActive(false);
+            Destroy(gameObject);
         }
         else
         {
             instance = this;
-            DontDestroyOnLoad(this);
+            DontDestroyOnLoad(gameObject);
         }
     }
 
