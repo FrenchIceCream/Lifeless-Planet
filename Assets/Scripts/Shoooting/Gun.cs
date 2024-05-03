@@ -26,9 +26,6 @@ public class Gun : MonoBehaviour
     bool allowReset = true;
     int burstBulletsLeft;
 
-    public delegate void OnShootDelegate(int newValue);
-    public event OnShootDelegate OnShoot;
-
     void Start()
     {
         inputManager = InputManager.instance;
@@ -59,8 +56,6 @@ public class Gun : MonoBehaviour
 
     void Shoot()
     {   
-        if (OnShoot != null)
-            OnShoot(ammoTracker.GetAmmoCount());
         readyToShoot = false;
 
         AudioSource.PlayClipAtPoint(shootSFX, Camera.main.transform.position, shootSFXVolume);

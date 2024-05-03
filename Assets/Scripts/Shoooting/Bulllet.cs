@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Bulllet : MonoBehaviour
 {
+    [SerializeField] int bulletDamage = 10;
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            Destroy(collision.gameObject);
+            collision.gameObject.GetComponent<Enemy>().TakeDamage(bulletDamage);
             Destroy(gameObject);
         }
     }
