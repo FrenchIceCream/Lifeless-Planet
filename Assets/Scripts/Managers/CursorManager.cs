@@ -8,8 +8,9 @@ using UnityEngine;
 public class CursorManager : MonoBehaviour
 {
     public static CursorManager instance;
-    public enum CursorState { FPS, Menu, FPSVisable};
-    [SerializeField] CursorState startState = CursorState.FPS;
+    public enum CursorState { Menu, FPSVisible};
+    [SerializeField] CursorState startState = CursorState.FPSVisible;
+    [SerializeField] Texture2D shootingCursor;
 
     void Awake()
     {
@@ -21,24 +22,23 @@ public class CursorManager : MonoBehaviour
         else
         {
             instance = this;
-            ChangeCursorMode(startState);
             DontDestroyOnLoad(gameObject);
         }
+    }
+
+    void Start()
+    {
+        ChangeCursorMode(startState);
     }
 
     public void ChangeCursorMode(CursorState cursorState)
     {
         switch (cursorState)
         {
-            case CursorState.FPS:
+            case CursorState.FPSVisible:
             {
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
-                break;
-            }
-
-            case CursorState.FPSVisable:
-            {
+                Cursor.SetCursor(shootingCursor, new Vector2(shootingCursor.width / 2, shootingCursor.height / 2), CursorMode.ForceSoftware);
+                Cursor.lockState = CursorLockMode.None;
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = true;
                 break;
@@ -46,8 +46,8 @@ public class CursorManager : MonoBehaviour
 
             case CursorState.Menu:
             {
-                Cursor.lockState = CursorLockMode.Confined;
                 Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.Confined;
                 break;
             }
         }

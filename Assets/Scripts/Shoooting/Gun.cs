@@ -9,8 +9,13 @@ public class Gun : MonoBehaviour
     [SerializeField] Transform bulletSpawnPoint;
     [SerializeField] float bulletSpeed;
     [SerializeField] float bulletLifeTime;
-    [SerializeField] AudioClip shootSFX;
 
+    [Header("SFX")]
+    [SerializeField] AudioClip shootSFX;
+    [SerializeField, Range(0, 1)] float shootSFXVolume = 1f;
+
+    enum GunType {   Single, Burst, Auto    }
+    GunType currentGunType;
     InputManager inputManager;
 
     void Start()
@@ -27,6 +32,8 @@ public class Gun : MonoBehaviour
     {
         if (!inputManager.FirePressed())
             return;
+
+        AudioSource.PlayClipAtPoint(shootSFX, Camera.main.transform.position, shootSFXVolume);
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
         bullet.GetComponent<Rigidbody>().AddForce(bulletSpawnPoint.forward.normalized * bulletSpeed, ForceMode.Impulse);
         Destroy(bullet, bulletLifeTime);
