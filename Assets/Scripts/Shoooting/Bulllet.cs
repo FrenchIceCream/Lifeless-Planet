@@ -10,6 +10,6 @@ public class Bulllet : MonoBehaviour
         {
             Destroy(collision.gameObject);
         }
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 }

@@ -254,8 +254,12 @@ MonoBehaviour:
   bulletSpawnPoint: {fileID: 6711786}
   bulletSpeed: 50
   bulletLifeTime: 2
+  bulletDelay: 0.3
+  bulletsPerBurst: 3
+  spreadIntensity: 1
   shootSFX: {fileID: 8300000, guid: 881e208a9551ff449bf9e2d2e0cd3a8d, type: 3}
   shootSFXVolume: 0.1
+  currentGunType: 1
 --- !u!1 &545560267
 GameObject:
   m_ObjectHideFlags: 0
