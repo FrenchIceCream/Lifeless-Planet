@@ -9,6 +9,7 @@ public class Gun : MonoBehaviour
     [SerializeField] Transform bulletSpawnPoint;
     [SerializeField] float bulletSpeed;
     [SerializeField] float bulletLifeTime;
+    [SerializeField] GunType currentGunType;
     [SerializeField] float bulletDelay;
     [SerializeField] int bulletsPerBurst = 3;
     [SerializeField] float spreadIntensity;
@@ -18,18 +19,20 @@ public class Gun : MonoBehaviour
 
 
     enum GunType {   Single, Burst, Auto    }
-    
-    //[SerializeField] 
-    GunType currentGunType;
     InputManager inputManager;
+    AmmoTracker ammoTracker;
     bool readyToShoot = true;
     bool isShooting;
     bool allowReset = true;
     int burstBulletsLeft;
 
+    public delegate void OnShootDelegate(int newValue);
+    public event OnShootDelegate OnShoot;
+
     void Start()
     {
         inputManager = InputManager.instance;
+        ammoTracker = AmmoTracker.instance;
         burstBulletsLeft = bulletsPerBurst;   
     }
 
@@ -46,15 +49,18 @@ public class Gun : MonoBehaviour
                 break;
         }
 
-        if (isShooting && readyToShoot)
+        if (isShooting && readyToShoot && ammoTracker.HasAmmo())
         {
             burstBulletsLeft = bulletsPerBurst;
+            ammoTracker.SubtractAmmo(1);
             Shoot();
         }
     }
 
     void Shoot()
-    {
+    {   
+        if (OnShoot != null)
+            OnShoot(ammoTracker.GetAmmoCount());
         readyToShoot = false;
 
         AudioSource.PlayClipAtPoint(shootSFX, Camera.main.transform.position, shootSFXVolume);
@@ -71,8 +77,9 @@ public class Gun : MonoBehaviour
             allowReset = false;
         }
 
-        if (currentGunType == GunType.Burst && burstBulletsLeft > 0)
+        if (currentGunType == GunType.Burst && burstBulletsLeft > 1)
         {
+            ammoTracker.SubtractAmmo(1);
             burstBulletsLeft--;
             Shoot();
         }
