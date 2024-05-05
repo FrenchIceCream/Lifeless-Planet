@@ -18,13 +18,15 @@ public class Gun : MonoBehaviour
     [SerializeField, Range(0, 1)] float shootSFXVolume = 1f;
 
 
-    enum GunType {   Single, Burst, Auto    }
+    public enum GunType {   Single, Burst, Auto    }
     InputManager inputManager;
     AmmoTracker ammoTracker;
     bool readyToShoot = true;
     bool isShooting;
     bool allowReset = true;
     int burstBulletsLeft;
+
+    public GunType GetCurrentGunType() => currentGunType;
 
     void Start()
     {

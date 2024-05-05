@@ -202,7 +202,8 @@ Transform:
   m_LocalPosition: {x: 547.45, y: 5.85, z: 557.3852}
   m_LocalScale: {x: 2.8031, y: 2.8031, z: 2.8031}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1922649916}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &323571863
@@ -272,10 +273,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5327637
+  m_Radius: 0.4698147
   m_Height: 1.8492537
   m_Direction: 0
-  m_Center: {x: 0, y: -0.035159912, z: 0.4470034}
+  m_Center: {x: 0, y: 0.020749712, z: 0.4473066}
 --- !u!54 &323571867
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1223,6 +1224,7 @@ GameObject:
   - component: {fileID: 1014641832}
   - component: {fileID: 1014641833}
   - component: {fileID: 1014641834}
+  - component: {fileID: 1014641835}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -1493,6 +1495,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 0b46ba5c-fa1e-4951-b12c-67329c0952c2
     m_ActionName: 'Player/Jump[/Keyboard/space]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: bdc2346f-5334-470a-91c9-35a4a0ffc095
+    m_ActionName: 'Player/CycleWeapon[/Mouse/scroll]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
@@ -1511,6 +1517,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+--- !u!114 &1014641835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1014641826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 291af5ffc955c9542896647e29d9d215, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  guns:
+  - {fileID: 1562787130}
+  - {fileID: 1820781447}
+  isPlayerControlled: 1
 --- !u!1001 &1152382209
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1581,48 +1603,15 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7352670361795420219, guid: eae7d3d1df15b44408f26b026f998acf, type: 3}
   m_PrefabInstance: {fileID: 1152382209}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1277979264
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1277979265}
-  - component: {fileID: 1277979266}
-  m_Layer: 0
-  m_Name: WeaponManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1277979265
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1277979264}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1277979266
+--- !u!114 &1562787130 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 480607026671966819, guid: 52cffc08930b14f4c8c137d8cb3e36e9, type: 3}
+  m_PrefabInstance: {fileID: 7143032321328659159}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1277979264}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 291af5ffc955c9542896647e29d9d215, type: 3}
+  m_Script: {fileID: 11500000, guid: 139196fad8c3ae64280a5c4fe1aadc51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1820781445
@@ -1691,6 +1680,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6119736285003815154, guid: 0d16e08f91e0009469ba51c2522c4386, type: 3}
   m_PrefabInstance: {fileID: 1820781445}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1820781447 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 480607026671966819, guid: 0d16e08f91e0009469ba51c2522c4386, type: 3}
+  m_PrefabInstance: {fileID: 1820781445}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 139196fad8c3ae64280a5c4fe1aadc51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1899635498 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6251516705503760374, guid: e9b29ec9bf4445a4aa780b5eb6acf8f7, type: 3}
@@ -1827,6 +1827,37 @@ MonoBehaviour:
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 95e7a044afe4f4a41af40ebe483d593a, type: 2}
   m_BuildHeightMesh: 0
+--- !u!1 &1922649915
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1922649916}
+  m_Layer: 0
+  m_Name: BulletSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1922649916
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1922649915}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.205}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 323571862}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2142316515
 GameObject:
   m_ObjectHideFlags: 0
@@ -1946,6 +1977,46 @@ PrefabInstance:
     - target: {fileID: 2711331953696538965, guid: e9b29ec9bf4445a4aa780b5eb6acf8f7, type: 3}
       propertyPath: m_Name
       value: InputManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635540768975283575, guid: e9b29ec9bf4445a4aa780b5eb6acf8f7, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635540768975283575, guid: e9b29ec9bf4445a4aa780b5eb6acf8f7, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_ActionId
+      value: bdc2346f-5334-470a-91c9-35a4a0ffc095
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635540768975283575, guid: e9b29ec9bf4445a4aa780b5eb6acf8f7, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_ActionName
+      value: 'Player/CycleWeapon[/Mouse/scroll]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635540768975283575, guid: e9b29ec9bf4445a4aa780b5eb6acf8f7, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635540768975283575, guid: e9b29ec9bf4445a4aa780b5eb6acf8f7, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635540768975283575, guid: e9b29ec9bf4445a4aa780b5eb6acf8f7, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1899635498}
+    - target: {fileID: 3635540768975283575, guid: e9b29ec9bf4445a4aa780b5eb6acf8f7, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635540768975283575, guid: e9b29ec9bf4445a4aa780b5eb6acf8f7, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ReadCycleWeaponInput
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635540768975283575, guid: e9b29ec9bf4445a4aa780b5eb6acf8f7, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: InputManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635540768975283575, guid: e9b29ec9bf4445a4aa780b5eb6acf8f7, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2150,5 +2221,4 @@ SceneRoots:
   - {fileID: 2142316518}
   - {fileID: 1750823657862212366}
   - {fileID: 4425653455527776207}
-  - {fileID: 1277979265}
   - {fileID: 393571694}

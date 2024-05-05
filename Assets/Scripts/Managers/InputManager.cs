@@ -81,4 +81,68 @@ public class InputManager : MonoBehaviour
         yield return new WaitForEndOfFrame();
         jumpPressed = false;
     }
+
+    
+    public bool pausePressed;
+
+    public void ReadPauseInput(InputAction.CallbackContext context)
+    {
+        pausePressed = !context.canceled;
+        StartCoroutine(ResetPausePressed());
+    }
+
+    IEnumerator ResetPausePressed()
+    {
+        yield return new WaitForEndOfFrame();
+        pausePressed = false;
+    }
+
+    float cycleWeaponInput;
+    
+    public float CycleWeaponInput() => cycleWeaponInput;
+
+    public void ReadCycleWeaponInput(InputAction.CallbackContext context)
+    {
+        Vector2 mouseScrollInput = context.ReadValue<Vector2>();
+        if (mouseScrollInput.y == 0)
+        {
+            cycleWeaponInput = 0;
+        }
+        else
+        {
+            cycleWeaponInput = Mathf.Sign(mouseScrollInput.y);
+        }
+    }
+
+    bool nextWeaponPressed;
+
+    public bool NextWeaponPressed() => nextWeaponPressed;
+
+    public void ReadNextWeaponInput(InputAction.CallbackContext context)
+    {
+        nextWeaponPressed = !context.canceled;
+        StartCoroutine("ResetNextWeaponPressedStart");
+    }
+
+    IEnumerator ResetNextWeaponPressedStart()
+    {
+        yield return new WaitForEndOfFrame();
+        nextWeaponPressed = false;
+    }
+
+    bool previousWeaponPressed;
+
+    public bool PreviousWeaponPressed() => previousWeaponPressed;
+
+    public void ReadPreviousWeaponInput(InputAction.CallbackContext context)
+    {
+        previousWeaponPressed = !context.canceled;
+        StartCoroutine("ResetPreviousWeaponPressedStart");
+    }
+
+    IEnumerator ResetPreviousWeaponPressedStart()
+    {
+        yield return new WaitForEndOfFrame();
+        previousWeaponPressed = false;
+    }
 }
