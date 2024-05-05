@@ -10,6 +10,13 @@ public class Health : MonoBehaviour
     public int GetHealth() => currentHealth;
     public int GetMaxHealth() => maxHealth;
 
+    public delegate void OnHealthChangedDelegate(int health);
+    public event OnHealthChangedDelegate OnHealthChanged;
+
+    void Start()
+    {
+        currentHealth = maxHealth;
+    }
 
     public void Heal(int amount)
     {
@@ -17,6 +24,9 @@ public class Health : MonoBehaviour
             currentHealth = maxHealth;
         else
             currentHealth += amount;
+
+        if (OnHealthChanged != null)
+            OnHealthChanged(currentHealth);
     }
 
     public void TakeDamage(int amount)
@@ -29,5 +39,8 @@ public class Health : MonoBehaviour
         }
         else
             currentHealth -= amount;
+
+        if (OnHealthChanged != null)
+            OnHealthChanged(currentHealth);
     }
 }

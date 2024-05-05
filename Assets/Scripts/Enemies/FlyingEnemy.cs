@@ -2,14 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// Class which represents enemies that fly
-/// </summary>
 public class FlyingEnemy : Enemy
 {
     public enum BehaviorAtStopDistance    { Stop, CircleClockwise, CircleAnticlockwise    }
-
-    [Header("Flying Enemy Settings")]
     public float stopDistance = 5.0f;
     public BehaviorAtStopDistance stopBehavior = BehaviorAtStopDistance.CircleClockwise;
 

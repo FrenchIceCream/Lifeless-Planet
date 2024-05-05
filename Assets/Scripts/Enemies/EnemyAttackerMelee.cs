@@ -2,9 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// Class which allows an enemy to make melee attacks
-/// </summary>
 public class EnemyAttackerMelee : EnemyAttacker
 {
     [Tooltip("The list of colliders to turn on/off when making melee attacks")]
