@@ -47,4 +47,11 @@ public class AmmoTracker : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
     }
+
+    public void ResetAmmo()
+    {
+        ammoCount = maxAmmo;
+        if (OnAmmoChanged != null)
+            OnAmmoChanged(ammoCount);
+    }
 }

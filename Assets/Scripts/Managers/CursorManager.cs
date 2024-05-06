@@ -11,19 +11,13 @@ public class CursorManager : MonoBehaviour
     public enum CursorState { Menu, FPSVisible};
     [SerializeField] CursorState startState = CursorState.FPSVisible;
     [SerializeField] Texture2D shootingCursor;
+    [SerializeField] Texture2D menuCursor;
+
+    public CursorState GetStartState() => startState;
 
     void Awake()
     {
-        if (FindObjectsByType<CursorManager>(FindObjectsSortMode.None).Length > 1)
-        {
-            gameObject.SetActive(false);
-            Destroy(gameObject);
-        }
-        else
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
+        instance = this;
     }
 
     void Start()
@@ -38,7 +32,6 @@ public class CursorManager : MonoBehaviour
             case CursorState.FPSVisible:
             {
                 Cursor.SetCursor(shootingCursor, new Vector2(shootingCursor.width / 2, shootingCursor.height / 2), CursorMode.ForceSoftware);
-                Cursor.lockState = CursorLockMode.None;
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = true;
                 break;
@@ -46,6 +39,7 @@ public class CursorManager : MonoBehaviour
 
             case CursorState.Menu:
             {
+                Cursor.SetCursor(menuCursor, new Vector2(menuCursor.width / 2, menuCursor.height / 2), CursorMode.ForceSoftware);
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.Confined;
                 break;

@@ -45,3 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startState: 0
+  shootingCursor: {fileID: 2800000, guid: 4e4967914ff22054e8b43168eb8910e3, type: 3}
+  menuCursor: {fileID: 2800000, guid: f2f13ae4773f84e4989c83f54ce81e24, type: 3}

@@ -9,16 +9,7 @@ public class InputManager : MonoBehaviour
 
     void Awake()
     {
-        if (FindObjectsByType<InputManager>(FindObjectsSortMode.None).Length > 1)
-        {
-            gameObject.SetActive(false);
-            Destroy(gameObject);
-        }
-        else
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
+        instance = this;
     }
 
     float horizontalMoveAxis;
@@ -83,18 +74,30 @@ public class InputManager : MonoBehaviour
     }
 
     
-    public bool pausePressed;
+    bool pausePressed;
+    public bool isGamePaused = false;
+    public void GamePaused(bool pause) => isGamePaused = pause;
+
+    [SerializeField] Canvas menuCanvas;
 
     public void ReadPauseInput(InputAction.CallbackContext context)
     {
-        pausePressed = !context.canceled;
-        StartCoroutine(ResetPausePressed());
-    }
+        pausePressed = context.action.WasPerformedThisFrame();
+        if (pausePressed)
+            isGamePaused = !isGamePaused;
 
-    IEnumerator ResetPausePressed()
-    {
-        yield return new WaitForEndOfFrame();
-        pausePressed = false;
+        if (isGamePaused)
+        {
+            CursorManager.instance.ChangeCursorMode(CursorManager.CursorState.Menu);
+            Time.timeScale = 0;
+            menuCanvas.enabled = true;
+        }
+        else
+        {
+            CursorManager.instance.ChangeCursorMode(CursorManager.CursorState.FPSVisible);
+            Time.timeScale = 1;
+            menuCanvas.enabled = false;
+        }
     }
 
     float cycleWeaponInput;
@@ -104,6 +107,7 @@ public class InputManager : MonoBehaviour
     public void ReadCycleWeaponInput(InputAction.CallbackContext context)
     {
         Vector2 mouseScrollInput = context.ReadValue<Vector2>();
+        Debug.Log(mouseScrollInput);
         if (mouseScrollInput.y == 0)
         {
             cycleWeaponInput = 0;

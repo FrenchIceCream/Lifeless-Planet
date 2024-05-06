@@ -37,6 +37,9 @@ public class Gun : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale == 0)
+            return; 
+        
         switch (currentGunType)
         {
             case GunType.Single:
