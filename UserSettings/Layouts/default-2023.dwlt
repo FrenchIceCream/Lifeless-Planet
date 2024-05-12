@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1536
     height: 780.8
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Project
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 321}
   m_MaxSize: {x: 10000, y: 10000}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 51
+  controlID: 65
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -224,7 +224,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 52
+  controlID: 66
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -249,7 +249,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 53
+  controlID: 57
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -360,7 +360,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors
+    - Assets/Sci-Fi Styled Modular Pack
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -370,16 +370,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors
+  - Assets/Sci-Fi Styled Modular Pack
   m_LastFoldersGridSize: -1
   m_LastProjectPath: "D:\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\Projects\\FPS"
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 191}
-    m_SelectedIDs: 34c40000
-    m_LastClickedID: 50228
-    m_ExpandedIDs: 0000000066a6000068a600006aa600006ca600006ea6000070a60000
+    m_SelectedIDs: 6ea60000
+    m_LastClickedID: 42606
+    m_ExpandedIDs: 000000001ea8000020a8000022a8000024a8000026a80000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -408,7 +408,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000066a6000068a600006aa600006ca600006ea6000070a60000
+    m_ExpandedIDs: 000000001ea8000020a8000022a8000024a8000026a80000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -556,7 +556,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 0ed8ffff
+      m_ExpandedIDs: 46e7fdff0af4fdff84bffeffd2c8ffff86d4ffffbcd4ffffc0d4ffffe2d4ffffe6d4ffff06d5ffff26d5ffff46d5ffff5ed5ffff7ed5ffff96d5ffffaed5ffffb2d5ffff32f9ffff44f9ffff4af9ffff5af9ffff7cf9ffff94f9ffffb6f9ffffbaf9ffffccf9ffffdef9fffff0f9fffff6f9ffff06faffff12faffff4cfaffff66faffff90faffffa8faffffc0faffffe8faffffeafaffff38a300000ce10000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1021,17 +1021,17 @@ MonoBehaviour:
       layout: 4
       size: {x: 0, y: 0}
       sizeOverridden: 0
-    - dockPosition: 1
-      containerId: overlay-container--right
+    - dockPosition: 0
+      containerId: overlay-toolbar__top
       displayed: 1
       id: AINavigationOverlay
-      index: 11
-      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":24.0,"y":24.799999237060548},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      index: 3
+      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":-232.0,"y":26.4000244140625},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":1,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
       floating: 0
-      collapsed: 0
-      snapOffset: {x: 24, y: 24.8}
+      collapsed: 1
+      snapOffset: {x: -232, y: 26.400024}
       snapOffsetDelta: {x: 0, y: 0}
-      snapCorner: 0
+      snapCorner: 1
       layout: 4
       size: {x: 0, y: 0}
       sizeOverridden: 0
@@ -1062,9 +1062,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 540.571, y: 1.8999999, z: 548.52}
+    m_Target: {x: 537.90344, y: -49.537716, z: 9.376369}
     speed: 2
-    m_Value: {x: 540.571, y: 1.8999999, z: 548.52}
+    m_Value: {x: 537.90344, y: -49.537716, z: 9.376369}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1110,13 +1110,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.14178753, y: 0.47630027, z: -0.07814097, w: -0.8642517}
+    m_Target: {x: 0.0006458446, y: -0.99472404, z: 0.10242794, w: 0.0062737423}
     speed: 2
-    m_Value: {x: -0.14178753, y: 0.47630027, z: -0.07814097, w: -0.86425173}
+    m_Value: {x: -0.00064584456, y: 0.994724, z: -0.10242793, w: -0.0062737423}
   m_Size:
-    m_Target: 9.197693
+    m_Target: 456.31885
     speed: 2
-    m_Value: 9.197693
+    m_Value: 456.31885
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1134,7 +1134,7 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+  m_LastSceneViewRotation: {x: 0.0006458446, y: -0.99472404, z: 0.10242794, w: 0.0062737423}
   m_LastSceneViewOrtho: 0
   m_Viewpoint:
     m_SceneView: {fileID: 16}
