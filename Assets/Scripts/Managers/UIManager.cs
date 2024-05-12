@@ -2,10 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI ammoText;
+    [SerializeField] Slider healthBar;
+
+    // UIManager instance;
+
+    // void Awake()
+    // {
+    //     if (instance != null)
+    //     {
+    //         Destroy(gameObject);
+    //         return;
+    //     }
+    //     else
+    //     {
+    //         instance = this;
+    //         DontDestroyOnLoad(gameObject);
+    //     }
+    // }
 
     void Start()
     {
@@ -13,6 +31,8 @@ public class UIManager : MonoBehaviour
 
         AmmoTracker.instance.OnAmmoChanged += UpdateAmmoCount;
         GameObject.FindWithTag("Player").GetComponent<Health>().OnHealthChanged += UpdateHealth;
+        healthBar.maxValue = GameObject.FindWithTag("Player").GetComponent<Health>().GetMaxHealth();
+        healthBar.value = GameObject.FindWithTag("Player").GetComponent<Health>().GetMaxHealth();
     }
 
     void UpdateAmmoCount(int count)
@@ -22,6 +42,6 @@ public class UIManager : MonoBehaviour
 
     void UpdateHealth(int count)
     {
-        Debug.Log(count);
+        healthBar.value = count;
     }
 }

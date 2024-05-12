@@ -33,7 +33,7 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
-        if (currentHealth - amount < 0)
+        if (currentHealth - amount <= 0)
         {
             currentHealth = 0;
             if (isPlayer)
