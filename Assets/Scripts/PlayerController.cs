@@ -47,7 +47,6 @@ public class PlayerController : MonoBehaviour
     void Move()
     {
         float horMovement = inputManager.GetHorizontalMoveAxis();
-        //Debug.Log("Horizontal movement: " + horMovement);
         float vertMovement = inputManager.GetVerticalMoveAxis();
         bool jumpPressed = inputManager.JumpPressed();
         bool boostHeld = inputManager.BoostHeld();
