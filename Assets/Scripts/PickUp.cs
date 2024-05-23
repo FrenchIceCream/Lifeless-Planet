@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PickUp : MonoBehaviour
 {
-    public enum PickUpType {Ammo, Health};
+    public enum PickUpType {Ammo, Health, Key};
     [SerializeField] PickUpType pickUpType;
     void OnTriggerEnter(Collider other)
     {
@@ -25,6 +25,11 @@ public class PickUp : MonoBehaviour
                     Destroy(gameObject);
                     other.GetComponent<Health>().Heal(20);
                 }
+                break;
+                case PickUpType.Key:
+                    Destroy(gameObject);
+                    other.GetComponent<PlayerController>().SetKey(true);
+                    FindFirstObjectByType<Portal>().ActivatePortal();
                 break;
             }
         }

@@ -12,6 +12,17 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float jumpTimeLeniency = 0.1f;
     float timeToStopLeniency;
     bool hasJumpedOnce = false;
+    bool hasKey = false;
+
+    public void SetKey(bool haskey)
+    {
+        hasKey = haskey;
+    }
+
+    public bool HasKey()
+    {
+        return hasKey;
+    }
 
     Vector3 movement;
     private CharacterController controller;
@@ -76,4 +87,6 @@ public class PlayerController : MonoBehaviour
 
         transform.Rotate(0, horizontalLookAxis * rotationSpeed * Time.deltaTime, 0);
     }
+
+
 }

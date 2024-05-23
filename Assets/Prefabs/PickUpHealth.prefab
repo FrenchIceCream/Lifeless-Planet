@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8244950708044080067}
   - component: {fileID: 7542934691159087351}
   m_Layer: 0
-  m_Name: PickUp
+  m_Name: PickUpHealth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c2a0a964d22ca844a17f4f089276b8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickUpType: 0
+  pickUpType: 1
 --- !u!135 &7542934691159087351
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -109,7 +109,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7842723669502880631}
-  m_Mesh: {fileID: -3958770277684823056, guid: e7966caf65c2ed1448d1730d12945545, type: 3}
+  m_Mesh: {fileID: 8087458221035121081, guid: e7966caf65c2ed1448d1730d12945545, type: 3}
 --- !u!23 &8623448295551588909
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -132,7 +132,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a2af1a3b740b02446940fd3bdc39f97c, type: 2}
+  - {fileID: 2100000, guid: 1d79a9894fb50e049933418b3f2afdf0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
