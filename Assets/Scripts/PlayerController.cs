@@ -89,9 +89,6 @@ public class PlayerController : MonoBehaviour
     void RotateHorizontally()
     {
         float horizontalLookAxis = inputManager.GetHorizontalLookAxis();
-
         transform.Rotate(0, horizontalLookAxis * rotationSpeed * Time.deltaTime, 0);
     }
-
-
 }
