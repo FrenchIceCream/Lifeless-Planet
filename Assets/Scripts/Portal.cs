@@ -22,6 +22,7 @@ public class Portal : MonoBehaviour
     {
         if (other.gameObject.tag == "Player" && other.gameObject.GetComponent<PlayerController>().HasKey())
         {
+            other.gameObject.GetComponent<PlayerController>().SetKey(false);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
