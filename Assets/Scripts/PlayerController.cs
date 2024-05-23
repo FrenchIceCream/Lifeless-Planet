@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] float speed = 10.0f;
+    [SerializeField] float boostSpeed = 10.0f;
     [SerializeField] float rotationSpeed = 100f;
     [SerializeField] float jumpPower = 50f;
     [SerializeField] float gravity = 10f;
@@ -49,6 +50,7 @@ public class PlayerController : MonoBehaviour
         //Debug.Log("Horizontal movement: " + horMovement);
         float vertMovement = inputManager.GetVerticalMoveAxis();
         bool jumpPressed = inputManager.JumpPressed();
+        bool boostHeld = inputManager.BoostHeld();
         
         if (controller.isGrounded)
         {
@@ -56,8 +58,12 @@ public class PlayerController : MonoBehaviour
             hasJumpedOnce = false;
             movement = new Vector3(horMovement, 0, vertMovement);
             movement = transform.TransformDirection(movement);
-            movement *= speed;
-
+            
+            if (boostHeld)
+                movement *= boostSpeed;
+            else
+                movement *= speed;
+            
             if (jumpPressed)
             {
                 hasJumpedOnce = true;
@@ -73,7 +79,7 @@ public class PlayerController : MonoBehaviour
                 hasJumpedOnce = true;
             }
 
-            movement = new Vector3(horMovement * speed, movement.y, vertMovement * speed);
+            movement = new Vector3(horMovement * (boostHeld ? boostSpeed : speed), movement.y, vertMovement * speed);
             movement = transform.TransformDirection(movement);
         }
         movement.y -= gravity * Time.deltaTime;

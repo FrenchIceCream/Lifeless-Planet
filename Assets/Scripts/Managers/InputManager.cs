@@ -56,14 +56,11 @@ public class InputManager : MonoBehaviour
     }
 
     bool jumpPressed;
-    bool jumpHeld;
-    public bool JumpPressed() => jumpPressed;
-    public bool JumpHeld() => jumpHeld;    
+    public bool JumpPressed() => jumpPressed;   
 
     public void ReadJumpInput(InputAction.CallbackContext context)
     {
         jumpPressed = !context.canceled;
-        jumpHeld = !context.canceled;
         StartCoroutine(ResetJumpStart());
     }
 
@@ -73,6 +70,13 @@ public class InputManager : MonoBehaviour
         jumpPressed = false;
     }
 
+    bool boostHeld;
+    public bool BoostHeld() => boostHeld;    
+
+    public void ReadBoostInput(InputAction.CallbackContext context)
+    {
+        boostHeld = !context.canceled;
+    }
     
     bool pausePressed;
     public bool isGamePaused = false;
