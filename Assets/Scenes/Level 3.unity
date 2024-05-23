@@ -296,12 +296,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 420407071}
+  - component: {fileID: 420407072}
+  - component: {fileID: 420407073}
+  - component: {fileID: 420407074}
   m_Layer: 0
   m_Name: BulletSpawn (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &420407071
 Transform:
@@ -318,6 +321,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 865664767}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &420407072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420407070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b690416b21e9794faf801c372fc45f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 417687765892875605, guid: 9921bc8149a2bfb4780120957e7eeeb0, type: 3}
+  bulletSpawn: {fileID: 420407071}
+  shootSFX: {fileID: 8300000, guid: 881e208a9551ff449bf9e2d2e0cd3a8d, type: 3}
+  force: 100
+  bulletLifeTime: 4
+--- !u!114 &420407073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420407070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8589095937a316b4fa1a395f6c9b1244, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDuration: 0.5
+  cooldownDuration: 0.2
+--- !u!114 &420407074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420407070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df252e0e2da91a547bb8e31ef8c16e14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 2
+  canMove: 0
+  target: {fileID: 1014641830}
+  maximumAttackRange: 50
+  doesAttack: 1
+  moveWhileAttacking: 0
+  attackEffect: {fileID: 0}
+  lineOfSightToAttack: 0
+  needsLineOfSightToMove: 0
+  hitWithLineOfSight:
+    serializedVersion: 2
+    m_Bits: 0
+  stopDistance: 5
+  stopBehavior: 1
 --- !u!114 &540504860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -623,6 +683,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Asset: {fileID: -944628639613478452, guid: 2534d40e6b3970e4fb119a00dcaff56e, type: 3}
   m_ActionId: a41b630e-5c7c-456c-af22-334632809a37
+--- !u!4 &1014641830 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6119645044778744153, guid: 6c501da371bf849448b457c27c42af60, type: 3}
+  m_PrefabInstance: {fileID: 1013356813993913241}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1075922131
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -737,12 +802,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1145623938}
+  - component: {fileID: 1145623939}
+  - component: {fileID: 1145623940}
+  - component: {fileID: 1145623941}
   m_Layer: 0
   m_Name: BulletSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1145623938
 Transform:
@@ -759,6 +827,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 865664767}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1145623939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1145623937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b690416b21e9794faf801c372fc45f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 417687765892875605, guid: 9921bc8149a2bfb4780120957e7eeeb0, type: 3}
+  bulletSpawn: {fileID: 1145623938}
+  shootSFX: {fileID: 8300000, guid: 881e208a9551ff449bf9e2d2e0cd3a8d, type: 3}
+  force: 100
+  bulletLifeTime: 4
+--- !u!114 &1145623940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1145623937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8589095937a316b4fa1a395f6c9b1244, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDuration: 0.5
+  cooldownDuration: 0.2
+--- !u!114 &1145623941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1145623937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df252e0e2da91a547bb8e31ef8c16e14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 2
+  canMove: 0
+  target: {fileID: 1014641830}
+  maximumAttackRange: 50
+  doesAttack: 1
+  moveWhileAttacking: 0
+  attackEffect: {fileID: 0}
+  lineOfSightToAttack: 0
+  needsLineOfSightToMove: 0
+  hitWithLineOfSight:
+    serializedVersion: 2
+    m_Bits: 0
+  stopDistance: 5
+  stopBehavior: 1
 --- !u!1 &1198294874
 GameObject:
   m_ObjectHideFlags: 0
