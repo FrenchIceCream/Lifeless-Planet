@@ -17,7 +17,6 @@ GameObject:
   - component: {fileID: 4771874847784144847}
   - component: {fileID: 5628931850939706541}
   - component: {fileID: 8809153532836391687}
-  - component: {fileID: 5537039416941566913}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -128,10 +127,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51b39c1c89d4b7e4b830ade360424ce0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 5537039416941566913}
   speed: 12
   boostSpeed: 16
-  rotationSpeed: 15
+  rotationSpeed: 4
   jumpPower: 10
   gravity: 10
   jumpTimeLeniency: 0.2
@@ -339,7 +337,7 @@ MonoBehaviour:
     m_ActionId: 5566b867-5059-41f7-b6e0-2f0838a80088
     m_ActionName: 'Player/Boost[/Keyboard/shift]'
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
+  m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -374,33 +372,6 @@ MonoBehaviour:
   - {fileID: 534907778637985726}
   - {fileID: 1460554788641520259}
   isPlayerControlled: 1
---- !u!54 &5537039416941566913
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3706514242768671855}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 94
-  m_CollisionDetection: 0
 --- !u!1 &4140668259108264336
 GameObject:
   m_ObjectHideFlags: 0
@@ -553,7 +524,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d35ae718e9c5c7844aa71b8288672c95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 30
+  rotationSpeed: 7
   invert: 1
 --- !u!1001 &128117574005796317
 PrefabInstance:
