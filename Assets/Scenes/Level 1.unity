@@ -992,12 +992,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1014641830}
     - target: {fileID: 7861912734412079210, guid: 429242b23905f2e439d7f54ae1dafa4c, type: 3}
+      propertyPath: canMove
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7861912734412079210, guid: 429242b23905f2e439d7f54ae1dafa4c, type: 3}
       propertyPath: maximumAttackRange
       value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7861912734412079210, guid: 429242b23905f2e439d7f54ae1dafa4c, type: 3}
       propertyPath: moveWhileAttacking
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3114,12 +3118,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1014641830}
     - target: {fileID: 7861912734412079210, guid: 429242b23905f2e439d7f54ae1dafa4c, type: 3}
+      propertyPath: canMove
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7861912734412079210, guid: 429242b23905f2e439d7f54ae1dafa4c, type: 3}
       propertyPath: maximumAttackRange
       value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7861912734412079210, guid: 429242b23905f2e439d7f54ae1dafa4c, type: 3}
       propertyPath: moveWhileAttacking
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
