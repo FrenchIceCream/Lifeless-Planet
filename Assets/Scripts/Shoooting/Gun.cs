@@ -53,6 +53,7 @@ public class Gun : MonoBehaviour
 
         if (isShooting && readyToShoot && ammoTracker.HasAmmo())
         {
+            AudioSource.PlayClipAtPoint(shootSFX, Camera.main.transform.position, shootSFXVolume);
             burstBulletsLeft = bulletsPerBurst;
             ammoTracker.SubtractAmmo(1);
             Shoot();
@@ -62,8 +63,6 @@ public class Gun : MonoBehaviour
     void Shoot()
     {   
         readyToShoot = false;
-
-        AudioSource.PlayClipAtPoint(shootSFX, Camera.main.transform.position, shootSFXVolume);
 
         Vector3 shootDirection = CalculateDirectionAndBurst().normalized;
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.identity);

@@ -135,7 +135,7 @@ MonoBehaviour:
   bulletSpawnPoint: {fileID: 8491543179596029074}
   bulletSpeed: 50
   bulletLifeTime: 1
-  currentGunType: 0
+  currentGunType: 2
   bulletDelay: 0.3
   bulletsPerBurst: 1
   spreadIntensity: 0.1
