@@ -32,7 +32,7 @@ public class UIManager : MonoBehaviour
         AmmoTracker.instance.OnAmmoChanged += UpdateAmmoCount;
         GameObject.FindWithTag("Player").GetComponent<Health>().OnHealthChanged += UpdateHealth;
         healthBar.maxValue = GameObject.FindWithTag("Player").GetComponent<Health>().GetMaxHealth();
-        healthBar.value = GameObject.FindWithTag("Player").GetComponent<Health>().GetMaxHealth();
+        healthBar.value = healthBar.maxValue;
     }
 
     void UpdateAmmoCount(int count)

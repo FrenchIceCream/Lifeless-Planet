@@ -87,6 +87,10 @@ public class InputManager : MonoBehaviour
     public void ReadPauseInput(InputAction.CallbackContext context)
     {
         pausePressed = context.action.WasPerformedThisFrame();
+
+        if (GameObject.FindWithTag("Player").GetComponent<Health>().GetHealth() <= 0)
+            return;
+
         if (pausePressed)
             isGamePaused = !isGamePaused;
 

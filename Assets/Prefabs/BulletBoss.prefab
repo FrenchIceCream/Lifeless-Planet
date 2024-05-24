@@ -152,7 +152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e357c6b9bcdcb04d9780895e36a6ca6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToHit: Player
+  tagsToHit:
+  - Player
   bulletDamage: 10
 --- !u!198 &4472598158005781961
 ParticleSystem:

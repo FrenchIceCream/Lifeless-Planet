@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class Bulllet : MonoBehaviour
 {   
-    [SerializeField] string tagToHit = "Enemy";
+    [SerializeField] string[] tagsToHit = {"Enemy", "Boss"};
     [SerializeField] int bulletDamage = 10;
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag(tagToHit))
+        foreach (string tag in tagsToHit)
         {
-            collision.gameObject.GetComponent<Health>().TakeDamage(bulletDamage);
-            Destroy(gameObject);
+            if (collision.gameObject.CompareTag(tag))
+            {
+                collision.gameObject.GetComponent<Health>().TakeDamage(bulletDamage);
+                Destroy(gameObject);
+            }
         }
     }
 }

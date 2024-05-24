@@ -139,12 +139,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df252e0e2da91a547bb8e31ef8c16e14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  canMove: 0
+  moveSpeed: 10
+  canMove: 1
   target: {fileID: 0}
   maximumAttackRange: 25
   doesAttack: 1
-  moveWhileAttacking: 0
+  moveWhileAttacking: 1
   attackEffect: {fileID: 0}
   lineOfSightToAttack: 1
   needsLineOfSightToMove: 1
