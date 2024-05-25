@@ -3123,7 +3123,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7861912734412079210, guid: 429242b23905f2e439d7f54ae1dafa4c, type: 3}
       propertyPath: maximumAttackRange
-      value: 15
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 7861912734412079210, guid: 429242b23905f2e439d7f54ae1dafa4c, type: 3}
       propertyPath: moveWhileAttacking
