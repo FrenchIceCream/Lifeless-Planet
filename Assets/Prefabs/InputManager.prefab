@@ -509,6 +509,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 82677712212274195, guid: ca2e9452974e3bc4baa281b7d89728e6, type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 304815118401948810, guid: ca2e9452974e3bc4baa281b7d89728e6, type: 3}
+      propertyPath: m_RaycastTarget
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 528983435236146074, guid: ca2e9452974e3bc4baa281b7d89728e6, type: 3}
@@ -642,6 +646,10 @@ PrefabInstance:
     - target: {fileID: 6318651068840854941, guid: ca2e9452974e3bc4baa281b7d89728e6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7505048872815971146, guid: ca2e9452974e3bc4baa281b7d89728e6, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8104897343408365713, guid: ca2e9452974e3bc4baa281b7d89728e6, type: 3}
       propertyPath: m_Spacing
