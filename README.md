@@ -7,4 +7,4 @@
 - Shift - ускорение
 - Esc - пауза  
 
-В релизах есть билд под Windows
+ **Билд под Windows: [скачать](https://github.com/FrenchIceCream/Lifeless-Planet/releases/latest/download/PC.zip)**
